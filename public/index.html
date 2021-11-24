@@ -22,6 +22,14 @@
         socket.on('disconnect', () => {
             console.log('We lost connection with the server');
         });
+
+        socket.emit('message', {
+            name: 'James'
+        });
+
+        socket.on('message', function(payload) {
+            console.log('Listen: ', payload);
+        });
     </script>
 </body>
 
